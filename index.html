@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Edu Best Boutique Enterprises — Premium Fashion, Epe Lagos</title>
+<meta name="description" content="Edu Best Boutique Enterprises — Epe Lagos' go-to destination for premium streetwear, shoes, bags, watches, caps and perfumes. Style that speaks." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+<style>
+  :root {
+    --bg:      #faf7f3;
+    --surface: #ffffff;
+    --surface2:#f3efe9;
+    --ink:     #211d1b;
+    --ink2:    #4a4441;
+    --charcoal:#221d1b;
+    --red:     #d8352f;
+    --red-dk:  #b8261f;
+    --white:   #ffffff;
+    --grey:    #8c847d;
+    --line:    rgba(33,29,27,0.10);
+    --line2:   rgba(255,255,255,0.12);
+    --display: "Bebas Neue", Impact, sans-serif;
+    --body:    "Inter", system-ui, sans-serif;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { font-family:var(--body); background:var(--bg); color:var(--ink); -webkit-font-smoothing:antialiased; overflow-x:hidden; }
+  img { display:block; max-width:100%; }
+  a { color:inherit; text-decoration:none; }
+  .wrap { width:min(1200px, 92vw); margin:0 auto; }
+  .eyebrow { font-size:.72rem; letter-spacing:.34em; text-transform:uppercase; font-weight:600; color:var(--red); }
+
+  /* ─── NAV ─── */
+  header { position:fixed; inset:0 0 auto; z-index:100; padding:1.1rem 0; transition:background .4s,padding .4s,box-shadow .4s; }
+  header.scrolled { background:rgba(250,247,243,.88); backdrop-filter:blur(14px); padding:.7rem 0; box-shadow:0 1px 0 var(--line); }
+  .nav { display:flex; align-items:center; justify-content:space-between; }
+  .logo { display:flex; align-items:center; gap:.6rem; }
+  .logo-mark { width:40px; height:40px; border-radius:8px; background:var(--red); display:grid; place-items:center; font-family:var(--display); font-size:1rem; color:var(--white); box-shadow:0 6px 16px -4px rgba(216,53,47,.5); letter-spacing:.04em; }
+  .logo-text { line-height:1.12; }
+  .logo-text .t1 { font-family:var(--display); font-size:1.4rem; color:var(--ink); letter-spacing:.06em; }
+  .logo-text .t2 { font-size:.56rem; letter-spacing:.32em; text-transform:uppercase; color:var(--grey); }
+  .nav-links { display:flex; gap:2rem; align-items:center; }
+  .nav-links a { font-size:.76rem; letter-spacing:.12em; text-transform:uppercase; color:var(--ink2); font-weight:500; transition:color .3s; position:relative; padding-bottom:3px; }
+  .nav-links a::after { content:""; position:absolute; bottom:0; left:0; width:0; height:1.5px; background:var(--red); transition:width .35s; }
+  .nav-links a:hover { color:var(--ink); }
+  .nav-links a:hover::after { width:100%; }
+  .nav-cta { background:var(--red) !important; color:var(--white) !important; padding:.62rem 1.4rem !important; border-radius:6px; transition:background .3s,transform .3s !important; box-shadow:0 6px 16px -6px rgba(216,53,47,.6); }
+  .nav-cta:hover { background:var(--red-dk) !important; transform:translateY(-2px); }
+  .nav-cta::after { display:none !important; }
+  .ham { display:none; flex-direction:column; gap:5px; cursor:pointer; background:none; border:0; padding:4px; }
+  .ham span { display:block; width:24px; height:2px; background:var(--ink); border-radius:2px; transition:.35s; }
+
+  /* ─── HERO ─── */
+  .hero { min-height:100vh; background:var(--bg); display:grid; grid-template-columns:1.05fr 1fr; position:relative; overflow:hidden; }
+  .hero::before { content:""; position:absolute; top:-20%; left:-10%; width:55%; height:80%; background:radial-gradient(circle, rgba(216,53,47,.07), transparent 65%); pointer-events:none; }
+  .hero-left { display:flex; flex-direction:column; justify-content:center; padding:8rem 3rem 5rem; z-index:2; }
+  .hero-tag { display:inline-flex; align-items:center; gap:.6rem; margin-bottom:1.8rem; }
+  .hero-tag .dot { width:7px; height:7px; border-radius:50%; background:var(--red); box-shadow:0 0 0 4px rgba(216,53,47,.15); }
+  .hero-tag span { font-size:.72rem; letter-spacing:.26em; text-transform:uppercase; color:var(--grey); font-weight:500; }
+  .hero h1 { font-family:var(--display); font-size:clamp(3.6rem,7.5vw,7rem); line-height:.96; color:var(--ink); letter-spacing:.03em; margin-bottom:1.5rem; }
+  .hero h1 .accent { color:var(--red); }
+  .hero p { color:var(--ink2); font-weight:300; line-height:1.8; max-width:40ch; margin-bottom:2.4rem; font-size:1rem; }
+  .hero-actions { display:flex; gap:1rem; flex-wrap:wrap; }
+  .btn-red { background:var(--red); color:var(--white); font-size:.78rem; letter-spacing:.16em; text-transform:uppercase; padding:.98rem 2rem; border-radius:7px; display:inline-flex; align-items:center; gap:.5rem; transition:background .3s,transform .3s,box-shadow .3s; font-weight:600; border:0; cursor:pointer; box-shadow:0 10px 26px -10px rgba(216,53,47,.6); }
+  .btn-red:hover { background:var(--red-dk); transform:translateY(-2px); box-shadow:0 14px 30px -10px rgba(216,53,47,.7); }
+  .btn-outline { background:transparent; color:var(--ink); font-size:.78rem; letter-spacing:.16em; text-transform:uppercase; padding:.92rem 2rem; border-radius:7px; display:inline-block; border:1.5px solid var(--line); transition:.3s; font-weight:600; }
+  .btn-outline:hover { border-color:var(--ink); }
+
+  /* Hero right — store image */
+  .hero-right { position:relative; overflow:hidden; }
+  .hero-photo { position:absolute; inset:0; background:linear-gradient(150deg,#f3efe9 0%,#efe7df 55%,#e8ddd2 100%); }
+  .hero-photo img { width:100%; height:100%; object-fit:cover; object-position:center; display:block; }
+  .hero-photo::after { content:""; position:absolute; inset:0; background:linear-gradient(to top, rgba(33,29,27,.45) 0%, transparent 50%); pointer-events:none; }
+  /* fallback if no store image */
+  .hero-photo-fallback { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:1rem; }
+  .hero-photo-fallback .owner-avatar { width:118px; height:118px; border-radius:50%; border:3px solid var(--red); background:var(--surface); display:grid; place-items:center; margin:0 auto; font-family:var(--display); font-size:2.7rem; color:var(--red); box-shadow:0 20px 50px -18px rgba(33,29,27,.3); }
+  .hero-photo-fallback .name { font-family:var(--display); font-size:1.7rem; letter-spacing:.06em; color:var(--ink); }
+  .hero-photo-fallback .role { font-size:.66rem; letter-spacing:.26em; text-transform:uppercase; color:var(--grey); }
+
+  .hero-stats { position:absolute; left:2.5rem; bottom:2.5rem; z-index:3; display:flex; gap:2.2rem; }
+  .hero-stat .n { font-family:var(--display); font-size:2.4rem; color:#fff; letter-spacing:.04em; text-shadow:0 2px 8px rgba(0,0,0,.3); }
+  .hero-stat .l { font-size:.64rem; letter-spacing:.18em; text-transform:uppercase; color:rgba(255,255,255,.75); }
+  .hero-scroll { position:absolute; bottom:2.2rem; right:2.2rem; z-index:3; display:flex; flex-direction:column; align-items:center; gap:.6rem; font-size:.6rem; letter-spacing:.26em; text-transform:uppercase; color:var(--grey); }
+  .hero-scroll .bar { width:1.5px; height:42px; background:linear-gradient(var(--red),transparent); animation:grow 2s ease-in-out infinite; }
+  @keyframes grow { 0%,100%{transform:scaleY(.3);transform-origin:top} 50%{transform:scaleY(1)} }
+
+  /* ─── MARQUEE ─── */
+  .marquee { background:var(--red); overflow:hidden; padding:.8rem 0; }
+  .marquee-track { display:inline-flex; gap:2.5rem; animation:slide 24s linear infinite; white-space:nowrap; }
+  .marquee-track span { font-family:var(--display); font-size:1.1rem; letter-spacing:.12em; color:var(--white); }
+  .marquee-track span::after { content:"✦"; font-size:.65rem; margin-left:2.5rem; opacity:.7; }
+  @keyframes slide { to { transform:translateX(-50%); } }
+
+  /* ─── SECTION SHELL ─── */
+  section { padding:5rem 0; }
+  .section-head { margin-bottom:3rem; }
+  .section-head .eyebrow { display:block; margin-bottom:.7rem; }
+  .section-head h2 { font-family:var(--display); font-size:clamp(2.4rem,5vw,3.8rem); letter-spacing:.03em; line-height:1; color:var(--ink); }
+  .section-head p { color:var(--grey); max-width:52ch; margin-top:.9rem; line-height:1.8; font-weight:300; }
+  .section-head.center { text-align:center; }
+  .section-head.center p { margin-left:auto; margin-right:auto; }
+
+  /* ─── CATEGORIES ─── */
+  .categories { background:var(--surface); }
+  .cat-grid { display:grid; grid-template-columns:repeat(6,1fr); gap:1rem; }
+  .cat-card {
+    border-radius:12px; overflow:hidden; cursor:pointer; position:relative;
+    aspect-ratio:2/3; background:var(--surface2);
+    border:1px solid var(--line);
+    transition:transform .45s cubic-bezier(.2,.8,.2,1), box-shadow .45s;
+    display:block;
+  }
+  .cat-card:hover { transform:translateY(-6px); box-shadow:0 22px 44px -22px rgba(33,29,27,.3); }
+
+  /* real image */
+  .cat-img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center; transition:transform 1s cubic-bezier(.2,.8,.2,1); z-index:1; display:block; }
+  .cat-card:hover .cat-img { transform:scale(1.08); }
+  .cat-img[data-error] { display:none; }
+
+  /* gradient bg fallback */
+  .cat-bg { position:absolute; inset:0; transition:transform 1s cubic-bezier(.2,.8,.2,1); z-index:0; }
+  .cat-card:hover .cat-bg { transform:scale(1.06); }
+  .cat-bg-1 { background:linear-gradient(160deg,#eef1f6,#dfe4ee); }
+  .cat-bg-2 { background:linear-gradient(160deg,#fbeae9,#f3d3d1); }
+  .cat-bg-3 { background:linear-gradient(160deg,#eaf2ec,#d4e6d8); }
+  .cat-bg-4 { background:linear-gradient(160deg,#f6efe0,#ecdcc0); }
+  .cat-bg-5 { background:linear-gradient(160deg,#eeeaf4,#ddd4ea); }
+  .cat-bg-6 { background:linear-gradient(160deg,#f6ece4,#ecd8c8); }
+
+  /* emoji icon — hide when real photo loaded */
+  .cat-icon { position:absolute; top:1.4rem; left:50%; transform:translateX(-50%); font-size:2.2rem; opacity:.85; transition:opacity .4s,transform .4s; z-index:2; }
+  .cat-card:hover .cat-icon { opacity:1; transform:translateX(-50%) scale(1.1); }
+  .cat-card:has(.cat-img:not([data-error])) .cat-icon { display:none; }
+
+  /* overlay — always present, stronger on real photos */
+  .cat-overlay {
+    position:absolute; inset:0; z-index:2;
+    background:linear-gradient(to top, rgba(0,0,0,.78) 0%, rgba(0,0,0,.18) 55%, transparent 80%);
+    opacity:0; transition:opacity .4s;
+  }
+  .cat-card:has(.cat-img:not([data-error])) .cat-overlay { opacity:1; }
+  .cat-card:hover .cat-overlay { opacity:1; background:linear-gradient(to top, rgba(0,0,0,.88) 0%, rgba(0,0,0,.32) 55%, transparent 80%); }
+
+  .cat-label {
+    position:absolute; inset:0; z-index:3; display:flex; flex-direction:column; justify-content:flex-end; padding:1.1rem .9rem;
+  }
+  /* text colour: white on real photo, dark on gradient fallback */
+  .cat-label h3 { font-family:var(--display); font-size:1.25rem; letter-spacing:.05em; color:var(--ink); transition:color .3s; }
+  .cat-label span { font-size:.6rem; letter-spacing:.2em; text-transform:uppercase; color:var(--grey); transition:color .3s; }
+  .cat-card:has(.cat-img:not([data-error])) .cat-label h3 { color:#fff; }
+  .cat-card:has(.cat-img:not([data-error])) .cat-label span { color:rgba(255,255,255,.8); }
+  /* also white on hover even for gradient cards */
+  .cat-card:hover .cat-label h3 { color:#fff; }
+  .cat-card:hover .cat-label span { color:rgba(255,255,255,.8); }
+
+  /* ─── FEATURED PRODUCTS ─── */
+  .products { background:var(--bg); }
+  .prod-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.4rem; }
+  .prod-card { background:var(--surface); border-radius:12px; overflow:hidden; cursor:pointer; border:1px solid var(--line); transition:box-shadow .4s, transform .4s; display:block; color:inherit; text-decoration:none; }
+  .prod-card.hidden { display:none; }
+  .prod-card.hidden.in { display:block; }
+  .show-more-wrap { text-align:center; margin-top:2.2rem; }
+  .btn-show-more { background:transparent; border:1.5px solid var(--line); color:var(--ink2); font-family:var(--body); font-size:.76rem; letter-spacing:.18em; text-transform:uppercase; font-weight:600; padding:.9rem 2.2rem; border-radius:7px; cursor:pointer; transition:.3s; display:inline-flex; align-items:center; gap:.6rem; }
+  .btn-show-more:hover { border-color:var(--red); color:var(--red); }
+  .btn-show-more .arrow { transition:transform .35s; }
+  .btn-show-more.open .arrow { transform:rotate(180deg); }
+  .prod-card:hover { box-shadow:0 20px 50px -24px rgba(33,29,27,.28); transform:translateY(-4px); }
+  .prod-img { aspect-ratio:1; position:relative; overflow:hidden; background:var(--surface2); }
+  .prod-img img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center; transition:transform 1s cubic-bezier(.2,.8,.2,1); display:block; z-index:1; }
+  .prod-card:hover .prod-img img { transform:scale(1.06); }
+  .prod-img .ph { position:absolute; inset:0; transition:transform 1s cubic-bezier(.2,.8,.2,1); z-index:0; }
+  .prod-card:hover .ph { transform:scale(1.06); }
+  .ph-tee  { background:linear-gradient(135deg,#fbe7b8 0%,#f3d08a 100%); }
+  .ph-shoe { background:linear-gradient(135deg,#efe9e6 0%,#e7d4d2 60%,#f0b6b2 130%); }
+  .ph-bag  { background:linear-gradient(135deg,#e9eaec 0%,#cfd2d6 100%); }
+  .ph-watch{ background:linear-gradient(135deg,#efe2c0 0%,#d9c48e 100%); }
+  .ph-cap  { background:linear-gradient(135deg,#e6e8f2 0%,#cdd2e6 100%); }
+  .ph-perf { background:linear-gradient(135deg,#f3e6d6 0%,#e6cdb4 100%); }
+  .prod-img .badge { position:absolute; top:.8rem; left:.8rem; z-index:3; background:var(--red); color:var(--white); font-size:.58rem; letter-spacing:.16em; text-transform:uppercase; padding:.32rem .7rem; border-radius:5px; font-weight:600; box-shadow:0 6px 14px -6px rgba(216,53,47,.6); }
+  .prod-img .icon-center { position:absolute; inset:0; display:grid; place-items:center; font-size:4rem; opacity:.5; z-index:1; }
+  .prod-info { padding:1.2rem 1.4rem 1.5rem; }
+  .prod-info .tag { font-size:.6rem; letter-spacing:.2em; text-transform:uppercase; color:var(--grey); margin-bottom:.4rem; font-weight:600; }
+  .prod-info h3 { font-size:1.02rem; font-weight:600; margin-bottom:.4rem; color:var(--ink); }
+  .prod-info .price { font-size:.74rem; letter-spacing:.04em; color:var(--ink2); font-weight:400; }
+  .prod-cta { display:flex; justify-content:space-between; align-items:center; margin-top:1rem; padding-top:1rem; border-top:1px solid var(--line); }
+  .enquire-link { font-size:.68rem; letter-spacing:.16em; text-transform:uppercase; color:var(--red); font-weight:600; }
+  .wishlist { font-size:1.1rem; cursor:pointer; transition:transform .3s; }
+  .wishlist:hover { transform:scale(1.25); }
+
+  /* ─── ABOUT / OWNER ─── */
+  .owner { background:var(--surface2); color:var(--ink); padding:4rem 0; }
+  .owner-grid { display:grid; grid-template-columns:1fr 1.3fr; gap:4rem; align-items:center; }
+  .owner-photo-wrap {
+    border-radius:14px; overflow:hidden; position:relative;
+    aspect-ratio:4/5;
+    background:linear-gradient(150deg,#efe7df,#e6d8cb);
+    box-shadow:0 24px 60px -20px rgba(33,29,27,.3);
+    flex-shrink:0;
+  }
+  .owner-photo-wrap img {
+    width:100%; height:100%; object-fit:cover; object-position:top center; display:block;
+  }
+  .owner-photo-wrap .frame { position:absolute; inset:1rem; border:1px solid rgba(216,53,47,.25); border-radius:9px; pointer-events:none; }
+  .owner-photo-wrap .placeholder-owner { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:1rem; }
+  .owner-photo-wrap .big-avatar { width:100px; height:100px; border-radius:50%; border:3px solid var(--red); background:var(--surface); display:grid; place-items:center; font-family:var(--display); font-size:2.4rem; color:var(--red); }
+  .owner-photo-wrap .caption { text-align:center; color:var(--grey); font-size:.76rem; line-height:1.6; }
+
+  .owner-text h2 { font-family:var(--display); font-size:clamp(2rem,3.5vw,3rem); letter-spacing:.03em; margin-bottom:1.2rem; line-height:1.05; color:var(--ink); }
+  .owner-text h2 .accent { color:var(--red); }
+  .owner-text p { color:var(--ink2); line-height:1.9; font-weight:300; margin-bottom:1rem; font-size:.95rem; }
+  .trust-pills { display:flex; flex-wrap:wrap; gap:.6rem; margin-top:1.6rem; }
+  .pill { background:var(--surface); border:1px solid var(--line); border-radius:999px; padding:.45rem 1.1rem; font-size:.68rem; letter-spacing:.08em; text-transform:uppercase; color:var(--ink2); transition:.3s; font-weight:500; }
+  .pill:hover { border-color:var(--red); color:var(--red); }
+
+  /* ─── TESTIMONIALS ─── */
+  .testimonials { background:var(--bg); }
+  .test-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.4rem; }
+  .test-card { background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:2rem 1.8rem; position:relative; }
+  .test-card blockquote { font-style:italic; color:var(--ink2); line-height:1.8; font-weight:300; font-size:.95rem; margin-bottom:1.2rem; }
+  .test-card .stars { color:var(--red); letter-spacing:.12em; margin-bottom:.8rem; font-size:.9rem; }
+  .test-card cite { font-style:normal; font-size:.68rem; letter-spacing:.16em; text-transform:uppercase; color:var(--grey); }
+  .test-card .q { position:absolute; top:1.1rem; right:1.4rem; font-family:var(--display); font-size:4rem; color:rgba(216,53,47,.12); line-height:1; }
+
+  /* ─── CONTACT ─── */
+  .contact { background:var(--charcoal); color:#f3efe9; }
+  .contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:start; }
+  .contact-info h2 { font-family:var(--display); font-size:clamp(2.4rem,4vw,3.4rem); letter-spacing:.03em; margin-bottom:1.1rem; color:#fff; }
+  .contact-info p { color:rgba(243,239,233,.65); line-height:1.9; font-weight:300; margin-bottom:1.8rem; }
+  .info-list { display:flex; flex-direction:column; gap:0; }
+  .info-row { display:flex; gap:1.2rem; padding:1.1rem 0; border-top:1px solid var(--line2); align-items:flex-start; }
+  .info-row:last-child { border-bottom:1px solid var(--line2); }
+  .info-row .ik { font-size:.6rem; letter-spacing:.2em; text-transform:uppercase; color:var(--red); min-width:78px; padding-top:3px; font-weight:600; }
+  .info-row .iv { color:rgba(243,239,233,.85); font-weight:300; line-height:1.7; }
+  /* social buttons row */
+  .social-row { display:flex; gap:.8rem; margin-top:1.8rem; flex-wrap:wrap; }
+  .soc-btn {
+    display:inline-flex; align-items:center; gap:.5rem;
+    border:1px solid var(--line2); border-radius:7px;
+    padding:.65rem 1.3rem; font-size:.72rem; letter-spacing:.14em; text-transform:uppercase;
+    color:rgba(243,239,233,.85); font-weight:500; transition:.3s; cursor:pointer;
+  }
+  .soc-btn:hover { border-color:var(--red); color:#fff; background:rgba(216,53,47,.18); }
+  .soc-btn svg { width:15px; height:15px; fill:currentColor; flex-shrink:0; }
+
+  form { display:grid; gap:1rem; }
+  .field { position:relative; }
+  .field input, .field textarea, .field select {
+    width:100%; background:rgba(255,255,255,.06); border:1px solid var(--line2);
+    border-radius:8px; padding:1rem 1.1rem; font-family:var(--body); font-size:.95rem;
+    color:#fff; font-weight:300; transition:border .3s,background .3s;
+  }
+  .field select { appearance:none; cursor:pointer; }
+  .field select option { background:var(--charcoal); }
+  .field input:focus, .field textarea:focus, .field select:focus { outline:none; border-color:var(--red); background:rgba(216,53,47,.07); }
+  .field input::placeholder, .field textarea::placeholder { color:rgba(243,239,233,.4); }
+  .field textarea { resize:vertical; min-height:88px; }
+  .f2 { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
+  .btn-red.submit { width:100%; margin-top:.4rem; padding:1.1rem; letter-spacing:.18em; font-size:.8rem; justify-content:center; }
+  .form-msg { font-size:.82rem; color:#ff8d88; min-height:1rem; margin-top:.2rem; }
+
+  /* ─── FOOTER ─── */
+  footer { background:#1a1614; color:#f3efe9; padding:4rem 0 1.8rem; }
+  .foot-top { display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:2.5rem; padding-bottom:2.6rem; border-bottom:1px solid var(--line2); }
+  .foot-brand .logo { margin-bottom:1rem; }
+  .foot-brand .logo-text .t1 { color:#fff; }
+  .foot-brand p { color:rgba(243,239,233,.45); font-weight:300; max-width:30ch; line-height:1.8; font-size:.9rem; }
+  .foot-cols { display:flex; gap:3.5rem; flex-wrap:wrap; }
+  .foot-col h4 { font-size:.62rem; letter-spacing:.26em; text-transform:uppercase; color:var(--red); margin-bottom:1rem; font-weight:600; }
+  .foot-col a { display:block; color:rgba(243,239,233,.6); font-weight:300; font-size:.9rem; padding:.3rem 0; transition:color .3s; }
+  .foot-col a:hover { color:#fff; }
+  .foot-bottom { display:flex; justify-content:space-between; flex-wrap:wrap; gap:1rem; margin-top:1.8rem; font-size:.74rem; color:rgba(243,239,233,.35); letter-spacing:.05em; }
+
+  /* ─── REVEAL ─── */
+  .reveal { opacity:0; transform:translateY(22px); transition:opacity .8s ease, transform .8s cubic-bezier(.2,.8,.2,1); }
+  .reveal.in { opacity:1; transform:none; }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width:960px) {
+    .hero { grid-template-columns:1fr; min-height:auto; }
+    .hero-right { aspect-ratio:16/10; min-height:320px; }
+    .hero-stats { left:1.5rem; bottom:1.5rem; }
+    .cat-grid { grid-template-columns:repeat(3,1fr); }
+    .prod-grid { grid-template-columns:1fr 1fr; }
+    .owner-grid { grid-template-columns:1fr 1.2fr; gap:2.5rem; }
+    .contact-grid { grid-template-columns:1fr; gap:2.5rem; }
+    .test-grid { grid-template-columns:1fr 1fr; }
+    .hero-left { padding:7rem 1.5rem 3rem; }
+    section { padding:4rem 0; }
+    .owner { padding:3rem 0; }
+  }
+  @media (max-width:640px) {
+    .nav-links {
+      position:fixed; inset:0 0 0 auto; width:min(80vw,300px);
+      background:var(--surface); flex-direction:column; justify-content:center;
+      padding:2.5rem; gap:1.8rem; transform:translateX(110%); transition:.45s cubic-bezier(.2,.8,.2,1); z-index:90;
+      box-shadow:-20px 0 50px -20px rgba(33,29,27,.3);
+    }
+    .nav-links.open { transform:none; }
+    .ham { display:flex; }
+    .cat-grid { grid-template-columns:repeat(2,1fr); }
+    .prod-grid { grid-template-columns:1fr; }
+    .test-grid { grid-template-columns:1fr; }
+    .foot-cols { gap:2rem; }
+    .owner-grid { grid-template-columns:1fr; gap:2rem; }
+    .owner-photo-wrap { aspect-ratio:3/2; max-height:280px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ─── NAV ─── -->
+<header id="header">
+  <div class="wrap nav">
+    <a href="#top" class="logo">
+      <div class="logo-mark">EBB</div>
+      <div class="logo-text">
+        <div class="t1">EDUBEST</div>
+        <div class="t2">Boutique</div>
+      </div>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#categories">Shop</a>
+      <a href="#featured">Featured</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a href="#contact" class="nav-cta">Visit Us</a>
+    </nav>
+    <button class="ham" id="ham" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- ─── HERO ─── -->
+<section class="hero" id="top">
+  <div class="hero-left">
+    <div class="hero-tag reveal"><span class="dot"></span><span>Lagos' Premium Fashion Destination</span></div>
+    <h1 class="reveal">DRESS<br>LIKE YOU<br><span class="accent">MEAN</span> IT.</h1>
+    <p class="reveal">Premium streetwear, designer shoes, luxury bags, fine watches &amp; signature perfumes. Everything you need to look and feel your absolute best.</p>
+    <div class="hero-actions reveal">
+      <a href="#categories" class="btn-red">Shop Now</a>
+      <a href="#contact" class="btn-outline">Visit the Store</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-photo">
+      <!-- Replace store.jpg with a photo of your store front or interior -->
+      <img src="images/store.jpg" alt="Edu Best Boutique Store" onerror="this.style.display='none'" />
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="n">20+</div><div class="l">Years in style</div></div>
+      <div class="hero-stat"><div class="n">1K+</div><div class="l">Happy clients</div></div>
+      <div class="hero-stat"><div class="n">6</div><div class="l">Categories</div></div>
+    </div>
+  </div>
+  <div class="hero-scroll"><div class="bar"></div><span>Scroll</span></div>
+</section>
+
+<!-- ─── MARQUEE ─── -->
+<div class="marquee">
+  <div class="marquee-track" aria-hidden="true">
+    <span>Clothes</span><span>Shoes</span><span>Bags</span><span>Watches</span><span>Perfumes</span><span>Caps</span>
+    <span>Clothes</span><span>Shoes</span><span>Bags</span><span>Watches</span><span>Perfumes</span><span>Caps</span>
+    <span>Clothes</span><span>Shoes</span><span>Bags</span><span>Watches</span><span>Perfumes</span><span>Caps</span>
+  </div>
+</div>
+
+<!-- ─── CATEGORIES ─── -->
+<section class="categories" id="categories">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">What we carry</span>
+      <h2>SHOP BY CATEGORY</h2>
+      <p>Everything from the freshest fits to timeless accessories — all under one roof.</p>
+    </div>
+    <div class="cat-grid">
+      <a class="cat-card reveal" href="#featured">
+        <img class="cat-img" src="images/cat-clothes.jpg" alt="Clothes" onerror="this.setAttribute('data-error','1')" />
+        <div class="cat-bg cat-bg-1"></div>
+        <div class="cat-icon">👕</div>
+        <div class="cat-overlay"></div>
+        <div class="cat-label"><h3>CLOTHES</h3><span>Tees · Shirts · Jeans</span></div>
+      </a>
+      <a class="cat-card reveal" href="#featured">
+        <img class="cat-img" src="images/cat-shoes.jpg" alt="Shoes" onerror="this.setAttribute('data-error','1')" />
+        <div class="cat-bg cat-bg-2"></div>
+        <div class="cat-icon">👟</div>
+        <div class="cat-overlay"></div>
+        <div class="cat-label"><h3>SHOES</h3><span>Sneakers · Boots · Slides</span></div>
+      </a>
+      <a class="cat-card reveal" href="#featured">
+        <img class="cat-img" src="images/cat-bags.jpg" alt="Bags" onerror="this.setAttribute('data-error','1')" />
+        <div class="cat-bg cat-bg-3"></div>
+        <div class="cat-icon">👜</div>
+        <div class="cat-overlay"></div>
+        <div class="cat-label"><h3>BAGS</h3><span>Crossbody · Leather · Designer</span></div>
+      </a>
+      <a class="cat-card reveal" href="#featured">
+        <img class="cat-img" src="images/cat-watches.jpg" alt="Watches" onerror="this.setAttribute('data-error','1')" />
+        <div class="cat-bg cat-bg-4"></div>
+        <div class="cat-icon">⌚</div>
+        <div class="cat-overlay"></div>
+        <div class="cat-label"><h3>WATCHES</h3><span>Luxury · Sport · Classic</span></div>
+      </a>
+      <a class="cat-card reveal" href="#featured">
+        <img class="cat-img" src="images/cat-caps.jpg" alt="Caps" onerror="this.setAttribute('data-error','1')" />
+        <div class="cat-bg cat-bg-5"></div>
+        <div class="cat-icon">🧢</div>
+        <div class="cat-overlay"></div>
+        <div class="cat-label"><h3>CAPS</h3><span>Snapbacks · Fitted · Hats</span></div>
+      </a>
+      <a class="cat-card reveal" href="#featured">
+        <img class="cat-img" src="images/cat-perfumes.jpg" alt="Perfumes" onerror="this.setAttribute('data-error','1')" />
+        <div class="cat-bg cat-bg-6"></div>
+        <div class="cat-icon">🌹</div>
+        <div class="cat-overlay"></div>
+        <div class="cat-label"><h3>PERFUMES</h3><span>Fragrances · Body Mist</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FEATURED ─── -->
+<section class="products" id="featured">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Just dropped</span>
+      <h2>FEATURED PIECES</h2>
+      <p>Hand-picked from the freshest arrivals. Sizes go fast — visit the store or call to reserve yours.</p>
+    </div>
+    <div class="prod-grid">
+      <a class="prod-card reveal" href="https://www.instagram.com/p/DZzy4oECG8G/?igsh=OTQyeWpjZWw1ZjUx" target="_blank" rel="noopener">
+        <div class="prod-img">
+          <img src="images/tee.jpg" alt="Homies Out of Society Tee" onerror="this.style.display='none'" />
+          <div class="ph ph-tee"><div class="icon-center">👕</div></div>
+          <span class="badge">New</span>
+        </div>
+        <div class="prod-info">
+          <div class="tag">Streetwear</div>
+          <h3>Homies "Out of Society" Tee</h3>
+          <div class="price">Available in store · Call to enquire</div>
+          <div class="prod-cta"><span class="enquire-link">View on Instagram →</span><span class="wishlist">🤍</span></div>
+        </div>
+      </a>
+      <a class="prod-card reveal" href="https://www.instagram.com/p/DZz08upCFR8/?img_index=1&igsh=bmxxeWdwZTNvcWF0" target="_blank" rel="noopener">
+        <div class="prod-img">
+          <img src="images/shoe.jpg" alt="Nike Shox TL Black Red" onerror="this.style.display='none'" />
+          <div class="ph ph-shoe"><div class="icon-center">👟</div></div>
+          <span class="badge">Hot</span>
+        </div>
+        <div class="prod-info">
+          <div class="tag">Footwear</div>
+          <h3>Nike Shox TL — Black / Red</h3>
+          <div class="price">Sneakers · Jordans · Boots · Slides</div>
+          <div class="prod-cta"><span class="enquire-link">View on Instagram →</span><span class="wishlist">🤍</span></div>
+        </div>
+      </a>
+      <a class="prod-card reveal" href="https://www.instagram.com/p/DZz3eVJok1x/?igsh=MW96d3QwbndjbmF1bw==" target="_blank" rel="noopener">
+        <div class="prod-img">
+          <img src="images/bag.jpg" alt="Grey Pebbled Leather Camera Bag" onerror="this.style.display='none'" />
+          <div class="ph ph-bag"><div class="icon-center">👜</div></div>
+          <span class="badge">New</span>
+        </div>
+        <div class="prod-info">
+          <div class="tag">Bags</div>
+          <h3>Grey Pebbled Leather Camera Bag</h3>
+          <div class="price">Available in store · Call to enquire</div>
+          <div class="prod-cta"><span class="enquire-link">View on Instagram →</span><span class="wishlist">🤍</span></div>
+        </div>
+      </a>
+      <a class="prod-card reveal" href="https://www.instagram.com/edubest1982" target="_blank" rel="noopener">
+        <div class="prod-img">
+          <img src="images/watch.jpg" alt="Premium Timepiece Collection" onerror="this.style.display='none'" />
+          <div class="ph ph-watch"><div class="icon-center">⌚</div></div>
+        </div>
+        <div class="prod-info">
+          <div class="tag">Watches</div>
+          <h3>Premium Timepiece Collection</h3>
+          <div class="price">Multiple brands · Call to enquire</div>
+          <div class="prod-cta"><span class="enquire-link">View on Instagram →</span><span class="wishlist">🤍</span></div>
+        </div>
+      </a>
+      <a class="prod-card reveal" href="https://www.instagram.com/edubest1982" target="_blank" rel="noopener">
+        <div class="prod-img">
+          <img src="images/cap.jpg" alt="New Era Fitteds and Snapbacks" onerror="this.style.display='none'" />
+          <div class="ph ph-cap"><div class="icon-center">🧢</div></div>
+          <span class="badge">New</span>
+        </div>
+        <div class="prod-info">
+          <div class="tag">Caps</div>
+          <h3>New Era Fitteds &amp; Snapbacks</h3>
+          <div class="price">Yankees · Braves · Cardinals · A's</div>
+          <div class="prod-cta"><span class="enquire-link">View on Instagram →</span><span class="wishlist">🤍</span></div>
+        </div>
+      </a>
+        <a class="prod-card reveal" href="https://www.instagram.com/edubest1982" target="_blank" rel="noopener">
+          <div class="prod-img">
+            <img src="images/perfume2.jpg" alt="Luxury Perfumes" onerror="this.style.display='none'" />
+            <div class="ph ph-perf"><div class="icon-center">🧴</div></div>
+            <span class="badge">New</span>
+          </div>
+          <div class="prod-info">
+            <div class="tag">Fragrance</div>
+            <h3>Luxury Perfume Selection</h3>
+            <div class="price">Long-lasting · Unisex & his/hers</div>
+            <div class="prod-cta"><span class="enquire-link">View on Instagram →</span><span class="wishlist">🤍</span></div>
+          </div>
+        </a>
+    </div>
+
+    <!-- hidden cards -->
+    <div class="prod-grid" id="prodMore" style="margin-top:1.4rem;display:none;">
+      
+      <a class="prod-card reveal" href="https://www.instagram.com/edubest1982" target="_blank" rel="noopener">
+        <div class="prod-img">
+          <img src="images/headwarmer.jpg" alt="Head Warmers" onerror="this.style.display='none'" />
+          <div class="ph" style="background:linear-gradient(135deg,#e8e4f0,#d4cde6)"><div class="icon-center">🧣</div></div>
+          <span class="badge">Hot</span>
+        </div>
+        <div class="prod-info">
+          <div class="tag">Accessories</div>
+          <h3>Head Warmers & Beanies</h3>
+          <div class="price">Multiple styles · Unisex</div>
+          <div class="prod-cta"><span class="enquire-link">View on Instagram →</span><span class="wishlist">🤍</span></div>
+        </div>
+      </a>
+      <a class="prod-card reveal" href="https://www.instagram.com/edubest1982" target="_blank" rel="noopener">
+        <div class="prod-img">
+          <img src="images/sandals.jpg" alt="Palm Sandals" onerror="this.style.display='none'" />
+          <div class="ph" style="background:linear-gradient(135deg,#f0ece4,#e0d4c0)"><div class="icon-center">🩴</div></div>
+        </div>
+        <div class="prod-info">
+          <div class="tag">Footwear</div>
+          <h3>Palm Sandals</h3>
+          <div class="price">Slides · Palms · Open-toe styles</div>
+          <div class="prod-cta"><span class="enquire-link">View on Instagram →</span><span class="wishlist">🤍</span></div>
+        </div>
+      </a>
+      <a class="prod-card reveal" href="https://www.instagram.com/edubest1982" target="_blank" rel="noopener">
+        <div class="prod-img">
+          <img src="images/eyewear.jpg" alt="Eyewear" onerror="this.style.display='none'" />
+          <div class="ph" style="background:linear-gradient(135deg,#e4eef0,#c8dde4)"><div class="icon-center">🕶️</div></div>
+          <span class="badge">New</span>
+        </div>
+        <div class="prod-info">
+          <div class="tag">Eyewear</div>
+          <h3>Sunglasses & Eyewear</h3>
+          <div class="price">Shades · Fashion frames · UV400</div>
+          <div class="prod-cta"><span class="enquire-link">View on Instagram →</span><span class="wishlist">🤍</span></div>
+        </div>
+      </a>
+      <a class="prod-card reveal" href="https://www.instagram.com/edubest1982" target="_blank" rel="noopener">
+        <div class="prod-img">
+          <img src="images/trousers.jpg" alt="Trousers" onerror="this.style.display='none'" />
+          <div class="ph" style="background:linear-gradient(135deg,#e6eaf0,#ccd2e0)"><div class="icon-center">👖</div></div>
+        </div>
+        <div class="prod-info">
+          <div class="tag">Bottoms</div>
+          <h3>Trousers & Joggers</h3>
+          <div class="price">Chinos · Cargos · Joggers · Denim</div>
+          <div class="prod-cta"><span class="enquire-link">View on Instagram →</span><span class="wishlist">🤍</span></div>
+        </div>
+      </a>
+    </div>
+
+    <div class="show-more-wrap">
+      <button class="btn-show-more" id="showMoreBtn" onclick="toggleMore()">
+        See More Pieces <span class="arrow">↓</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ─── ABOUT / OWNER ─── -->
+<section class="owner" id="about">
+  <div class="wrap owner-grid">
+    <div class="owner-photo-wrap reveal">
+      <img src="images/owner.jpg" alt="EduBest Boutique Owner" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+      <div class="placeholder-owner" style="display:none">
+        <div class="big-avatar">EB</div>
+        <div class="caption">Add owner photo<br><span style="font-size:.66rem;opacity:.7">images/owner.jpg</span></div>
+      </div>
+      <div class="frame"></div>
+    </div>
+    <div class="owner-text reveal">
+      <span class="eyebrow">Our story</span>
+      <h2>BUILT ON PASSION FOR <span class="accent">STYLE.</span></h2>
+      <p>EduBest Boutique was born from a simple belief — that everyone deserves to dress well. We source the freshest streetwear, premium footwear, quality bags, fine watches and signature fragrances, all in one place.</p>
+      <p>Our store in Epe, Lagos is more than a boutique. It's where you come to discover your style, find pieces that last, and leave feeling like the best version of yourself.</p>
+      <div class="trust-pills">
+        <span class="pill">Premium Quality</span>
+        <span class="pill">Authentic Pieces</span>
+        <span class="pill">Friendly Service</span>
+        <span class="pill">All Ages Welcome</span>
+        <span class="pill">Lagos Based</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── TESTIMONIALS ─── -->
+<section class="testimonials">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <span class="eyebrow">What clients say</span>
+      <h2>REAL WORDS, REAL PEOPLE</h2>
+    </div>
+    <div class="test-grid">
+      <div class="test-card reveal">
+        <div class="stars">★★★★★</div>
+        <div class="q">"</div>
+        <blockquote>EduBest is my go-to for everything. The shoes, the caps, the fit — they always have exactly what I need. Quality is always 100%.</blockquote>
+        <cite>— Tunde A., Lagos</cite>
+      </div>
+      <div class="test-card reveal">
+        <div class="stars">★★★★★</div>
+        <div class="q">"</div>
+        <blockquote>I got my Timbs and a matching bag in one trip. The staff are so helpful and the prices are fair for the quality you get.</blockquote>
+        <cite>— Chisom O., Abuja</cite>
+      </div>
+      <div class="test-card reveal">
+        <div class="stars">★★★★★</div>
+        <div class="q">"</div>
+        <blockquote>Best boutique in Lagos, no debate. The watch collection alone is worth the visit. I always recommend EduBest to everyone.</blockquote>
+        <cite>— Damilola F., Lagos</cite>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CONTACT ─── -->
+<section class="contact" id="contact">
+  <div class="wrap contact-grid">
+    <div class="contact-info reveal">
+      <span class="eyebrow">Find us</span>
+      <h2>COME SEE US IN STORE</h2>
+      <p>Walk in or send us a message — we're always happy to help you find exactly what you need.</p>
+      <div class="info-list">
+        <div class="info-row"><span class="ik">Location</span><span class="iv">27, Ayetoro Market, Epe, Lagos. 106101<br><span style="font-size:.82rem;opacity:.7">Lagos, Nigeria</span></span></div>
+        <div class="info-row"><span class="ik">Phone</span><span class="iv"><a href="tel:+2347035367206" style="color:inherit">0703 536 7206</a></span></div>
+        <div class="info-row"><span class="ik">Hours</span><span class="iv">Mon – Sat: 8:00am – 8:00pm<br><span style="font-size:.82rem;opacity:.7">Closed Sundays</span></span></div>
+      </div>
+      <div class="social-row">
+        <a href="https://www.instagram.com/edubest1982" target="_blank" rel="noopener" class="soc-btn">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          Instagram
+        </a>
+        <a href="https://wa.me/2347035367206" target="_blank" rel="noopener" class="soc-btn">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp
+        </a>
+      </div>
+    </div>
+    <form class="reveal" id="contactForm" novalidate>
+      <div class="f2">
+        <div class="field"><input type="text" id="fname" placeholder="Your name" required /></div>
+        <div class="field"><input type="tel" id="fphone" placeholder="Phone / WhatsApp" /></div>
+      </div>
+      <div class="field"><input type="email" id="femail" placeholder="Email address" /></div>
+      <div class="field">
+        <select id="fcat">
+          <option value="" disabled selected>What are you looking for?</option>
+          <option>Clothes</option>
+          <option>Shoes</option>
+          <option>Bags</option>
+          <option>Watches</option>
+          <option>Caps</option>
+          <option>Perfumes</option>
+          <option>General enquiry</option>
+        </select>
+      </div>
+      <div class="field"><textarea id="fmsg" placeholder="Tell us more (optional)"></textarea></div>
+      <button type="submit" class="btn-red submit">Send Enquiry</button>
+      <p class="form-msg" id="formMsg" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <a href="#top" class="logo foot-logo">
+          <div class="logo-mark">EBB</div>
+          <div class="logo-text">
+            <div class="t1">EDUBEST</div>
+            <div class="t2">Boutique</div>
+          </div>
+        </a>
+        <p>Epe Lagos' premium fashion boutique for clothes, shoes, bags, watches, caps &amp; perfumes.</p>
+      </div>
+      <div class="foot-cols">
+        <div class="foot-col">
+          <h4>Shop</h4>
+          <a href="#categories">Clothes</a>
+          <a href="#categories">Shoes</a>
+          <a href="#categories">Bags</a>
+          <a href="#categories">Watches</a>
+          <a href="#categories">Caps</a>
+          <a href="#categories">Perfumes</a>
+        </div>
+        <div class="foot-col">
+          <h4>Info</h4>
+          <a href="#about">About Us</a>
+          <a href="#contact">Contact</a>
+          <a href="#contact">Directions</a>
+          <a href="tel:+2347035367206">Call Us</a>
+        </div>
+        <div class="foot-col">
+          <h4>Follow</h4>
+          <a href="https://www.instagram.com/edubest1982" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://wa.me/2347035367206" target="_blank" rel="noopener">WhatsApp</a>
+          <a href="#">TikTok</a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="yr"></span> EduBest Boutique Enterprises. All rights reserved.</span>
+      <span>Epe, Lagos, Nigeria</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function toggleMore() {
+    const more = document.getElementById('prodMore');
+    const btn  = document.getElementById('showMoreBtn');
+    const open = more.style.display === 'grid';
+    more.style.display = open ? 'none' : 'grid';
+    btn.classList.toggle('open', !open);
+    btn.innerHTML = open
+      ? 'See More Pieces <span class="arrow">↓</span>'
+      : 'Show Less <span class="arrow">↑</span>';
+    if (!open) {
+      // trigger reveal animations on newly shown cards
+      more.querySelectorAll('.reveal').forEach(el => el.classList.add('in'));
+    }
+  }
+
+  const hdr = document.getElementById('header');
+  const onScroll = () => hdr.classList.toggle('scrolled', scrollY > 50);
+  onScroll(); addEventListener('scroll', onScroll, {passive:true});
+
+  const ham = document.getElementById('ham');
+  const nav = document.getElementById('navLinks');
+  ham.addEventListener('click', () => nav.classList.toggle('open'));
+  nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => nav.classList.remove('open')));
+
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      const sibs = [...e.target.parentElement.querySelectorAll('.reveal')];
+      const idx = sibs.indexOf(e.target);
+      e.target.style.transitionDelay = Math.min(idx, 5) * 80 + 'ms';
+      e.target.classList.add('in');
+      io.unobserve(e.target);
+    });
+  }, {threshold: 0.12});
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  const form = document.getElementById('contactForm');
+  const msg  = document.getElementById('formMsg');
+  // Formspree integration — replace with your Formspree form endpoint
+  const FORM_ENDPOINT = 'https://formspree.io/f/yourFormId';
+
+  form.addEventListener('submit', async e => {
+    e.preventDefault();
+    const name = document.getElementById('fname').value.trim();
+    if (!name) { msg.style.color = '#ff8d88'; msg.textContent = 'Please enter your name.'; return; }
+    const phone = document.getElementById('fphone').value.trim();
+    const email = document.getElementById('femail').value.trim();
+    const category = document.getElementById('fcat').value || '';
+    const message = document.getElementById('fmsg').value.trim();
+
+    msg.style.color = '#fff';
+    msg.textContent = 'Sending...';
+
+    try {
+      const formData = new FormData(form);
+      const res = await fetch(FORM_ENDPOINT, {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (res.ok) {
+        msg.style.color = '#9be59b';
+        msg.textContent = 'Thanks ' + name.split(' ')[0] + '! Enquiry sent.';
+
+        // Open WhatsApp to admin with a prefilled message (user must send)
+        const admin = '2347035367206'; // admin WhatsApp number, replace if needed
+        const waMsg = encodeURIComponent(
+          `New enquiry from ${name}\nPhone: ${phone || 'N/A'}\nEmail: ${email || 'N/A'}\nCategory: ${category}\n\n${message}`
+        );
+        window.open('https://wa.me/' + admin + '?text=' + waMsg, '_blank');
+
+        form.reset();
+      } else {
+        const data = await res.json().catch(() => ({}));
+        msg.style.color = '#ff8d88';
+        msg.textContent = data.error || 'Submission failed. Please try again.';
+      }
+    } catch (err) {
+      msg.style.color = '#ff8d88';
+      msg.textContent = 'Submission failed. Please check your connection.';
+    }
+  });
+
+  document.getElementById('yr').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
